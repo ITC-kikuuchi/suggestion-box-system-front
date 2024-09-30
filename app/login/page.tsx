@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Login } from "@/apis/login/api/login";
 import { useRouter } from 'next/navigation';
-import { SnackbarAlert } from "@/components/pages/login/snackbarAlert/SnackbarAlert";
+import { SnackbarAlert } from "@/components/pages/login/snackbarAlert/snackbarAlert";
 
 export default function LoginPage() {
 
