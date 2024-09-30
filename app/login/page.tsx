@@ -32,6 +32,7 @@ export default function LoginPage() {
       setPasswordErrors(data.detail.password || '');
     } else if (status === 200) {
       // ログイン成功
+      document.cookie = `token=${data.access_token}; path=/;`;
       router.push('/');
     } else {
       // ログイン失敗
