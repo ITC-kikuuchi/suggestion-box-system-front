@@ -1,13 +1,11 @@
 'use client';
 
-import React from "react";
-import { useState } from "react";
-
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { Login } from "@/apis/login/api/login";
+import React, { useState } from "react";
+import { TextField, Button } from "@mui/material";
 import { useRouter } from 'next/navigation';
+import { Login } from "@/apis/login/api/login";
 import { SnackbarAlert } from "@/components/pages/login/snackbarAlert/snackbarAlert";
+import { useUser } from '@/context/loginUserContext';
 
 export default function LoginPage() {
 
@@ -16,6 +14,7 @@ export default function LoginPage() {
   const [mailAddressErrors, setMailAddressErrors] = useState('');
   const [passwordErrors, setPasswordErrors] = useState('');
   const [open, setOpen] = useState(false);
+  const { setUser } = useUser();
 
   const router = useRouter();
 
@@ -33,7 +32,11 @@ export default function LoginPage() {
     } else if (status === 200) {
       // ログイン成功
       document.cookie = `token=${data.access_token}; path=/;`;
-      router.push('/');
+      setUser({
+        id: data.id,
+        unknown: data.unknown,
+      });
+      router.push('/suggestion');
     } else {
       // ログイン失敗
       setOpen(true);
