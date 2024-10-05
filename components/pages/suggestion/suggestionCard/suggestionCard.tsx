@@ -4,7 +4,7 @@ import CategoryChip from "../categoryChip/categoryChip";
 
 export default function SuggestionCard({ suggestion }: { suggestion: Suggestion }) {
   const statusLabel = suggestion.status_id === 1 ? "未解決" : "解決";
-  const statusColor = suggestion.status_id === 1 ? "blue" : "red";
+  const statusColor = suggestion.status_id === 1 ? "red" : "green";
 
   return (
     <Card sx={{ maxWidth: 800, width: "100%", marginBottom: 4 }}>
