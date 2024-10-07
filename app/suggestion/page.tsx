@@ -4,7 +4,7 @@ import { getSuggestions } from "@/apis/suggestion/api/getSuggestions";
 import SuggestionList from "@/components/pages/suggestion/suggestionList/suggestionList";
 
 export default async function SuggestionPage() {
-  const { status, data } = await getSuggestions();
+  const { data } = await getSuggestions();
   const suggestions: Suggestions = data;
 
   return (
