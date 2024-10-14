@@ -29,7 +29,7 @@ export default function SuggestionPage() {
             意見を投稿
           </Button>
         </div>
-        <SuggestionList suggestions={suggestions} />
+        {suggestions ? <SuggestionList suggestions={suggestions} /> : <p>データが存在しません</p>}
       </div>
     </div>
   );
