@@ -9,6 +9,8 @@ export const getSuggestions = async () => {
   const response = await fetch(`${API_URL}/suggestions`, {
     method: "GET",
     headers: {
+      "Accept": "application/json",
+      'Authorization': `Bearer ${cookies.token}`,
     },
   });
 
