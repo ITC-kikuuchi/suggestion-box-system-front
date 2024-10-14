@@ -1,11 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Suggestions } from "@/apis/suggestion/types";
 import { Button } from "@mui/material";
 import { getSuggestions } from "@/apis/suggestion/api/getSuggestions";
 import SuggestionList from "@/components/pages/suggestion/suggestionList/suggestionList";
 
-export default async function SuggestionPage() {
-  const { data } = await getSuggestions();
-  const suggestions: Suggestions = data;
+export default function SuggestionPage() {
+  const [suggestions, setSuggestions] = useState<Suggestions | null>(null);
+
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      const { data, status } = await getSuggestions();
+      if (status === 200) {
+        setSuggestions(data);
+      } else {
+        console.error("Error fetching suggestions:", status);
+      }
+    };
+    fetchSuggestions();
+  }, []);
 
   return (
     <div className="flex justify-center mt-12 w-full">
@@ -15,7 +29,7 @@ export default async function SuggestionPage() {
             意見を投稿
           </Button>
         </div>
-        <SuggestionList suggestions={suggestions} />
+        {suggestions ? <SuggestionList suggestions={suggestions} /> : <p>データが存在しません</p>}
       </div>
     </div>
   );
