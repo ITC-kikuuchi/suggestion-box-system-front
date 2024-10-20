@@ -16,7 +16,9 @@ export default function SuggestionPage() {
   const [suggestions, setSuggestions] = useState<Suggestions | null>(null);
   const [categories, setCategories] = useState<Categories | null>(null);
   const [statuses, setStatus] = useState<Statuses | null>(null);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
+    null
+  );
   const [selectedStatusId, setSelectedStatusId] = useState<number | null>(null);
 
   useEffect(() => {
@@ -25,9 +27,21 @@ export default function SuggestionPage() {
         await Promise.all([getSuggestions(), getCategories(), getStatuses()]);
 
       // ステータスが 200 の場合はレスポンスデータをセットし、それ以外は null をセット
-      setSuggestions(suggestionsResponse.responseStatus === 200 ? suggestionsResponse.responseData : null);
-      setCategories(categoriesResponse.responseStatus === 200 ? categoriesResponse.responseData : null);
-      setStatus(statusesResponse.responseStatus === 200 ? statusesResponse.responseData : null);
+      setSuggestions(
+        suggestionsResponse.responseStatus === 200
+          ? suggestionsResponse.responseData
+          : null
+      );
+      setCategories(
+        categoriesResponse.responseStatus === 200
+          ? categoriesResponse.responseData
+          : null
+      );
+      setStatus(
+        statusesResponse.responseStatus === 200
+          ? statusesResponse.responseData
+          : null
+      );
 
       if (suggestionsResponse.responseStatus !== 200) {
         // ステータスが　200 ではなかった場合
