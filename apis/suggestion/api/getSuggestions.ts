@@ -14,10 +14,11 @@ export const getSuggestions = async () => {
     },
   });
 
-  const data = await response.json();
+  // レスポンスをJSON形式にパース
+  const responseData = await response.json();
 
   return {
-    status: response.status,
-    data,
+    responseStatus: response.status,
+    responseData,
   };
 }
