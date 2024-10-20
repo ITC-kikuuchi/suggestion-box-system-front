@@ -87,6 +87,22 @@ export default function SuggestionPage() {
           </Button>
         </div>
         {suggestions ? <SuggestionList suggestions={suggestions} /> : <p>データが存在しません</p>}
+
+      {/* 絞り込み機能 */}
+      <div className="absolute right-16 mt-16">
+        {/* カテゴリ絞り込み */}
+        {categories ? (
+          <CategoryList
+            categories={categories}
+            onSelectCategory={handleCategorySelect}
+          />
+        ) : null}
+        {/* ステータス絞り込み */}
+        {statuses ? (
+          <StatusList
+            statuses={statuses}
+            onSelectStatus={handleStatusSelect} />
+        ) : null}
       </div>
     </div>
   );
