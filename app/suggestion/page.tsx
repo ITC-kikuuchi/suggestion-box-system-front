@@ -79,14 +79,22 @@ export default function SuggestionPage() {
   );
 
   return (
-    <div className="flex justify-center mt-12 w-full">
-      <div className="flex flex-col max-w-[800px] w-full mx-auto">
+    <div className="flex justify-center mt-12 w-full relative">
+      <div className="flex-item flex-col max-w-[800px] w-full">
         <div className="self-start">
           <Button variant="contained" className="w-42 mb-8 bg-neutral-500">
             意見を投稿
           </Button>
         </div>
-        {suggestions ? <SuggestionList suggestions={suggestions} /> : <p>データが存在しません</p>}
+        {/* 意見一覧表示 */}
+        {filteredSuggestions ? (
+          <SuggestionList
+            suggestions={{ suggestion_list: filteredSuggestions }}
+          />
+        ) : (
+          <p>データが存在しません</p>
+        )}
+      </div>
 
       {/* 絞り込み機能 */}
       <div className="absolute right-16 mt-16">
