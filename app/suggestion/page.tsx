@@ -55,6 +55,29 @@ export default function SuggestionPage() {
     fetchAllData();
   }, []);
 
+  // 選択された カテゴリID をセット
+  const handleCategorySelect = (categoryId: number) => {
+    setSelectedCategoryId(categoryId);
+  };
+
+  // 選択された ステータスID をセット
+  const handleStatusSelect = (statusId: number) => {
+    setSelectedStatusId(statusId);
+  };
+
+  // 選択された category_id と status_id に紐づく意見を絞り込む
+  const filteredSuggestions = suggestions?.suggestion_list.filter(
+    (suggestion) =>
+      // category_id が選択されている場合
+      (selectedCategoryId
+        ? suggestion.category_list.some(
+          (category) => category.category_id === selectedCategoryId
+        )
+        : true) &&
+      // status_id が選択されている場合
+      (selectedStatusId ? suggestion.status_id === selectedStatusId : true)
+  );
+
   return (
     <div className="flex justify-center mt-12 w-full">
       <div className="flex flex-col max-w-[800px] w-full mx-auto">
