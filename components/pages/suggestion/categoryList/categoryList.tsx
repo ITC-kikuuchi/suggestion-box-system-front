@@ -9,6 +9,9 @@ export default function CategoryList({ categories, onSelectCategory }: { categor
           <Typography variant="h6" component="div" gutterBottom>
             カテゴリ
           </Typography>
+          <ListItemButton onClick={() => onSelectCategory(null)}>
+            <ListItemText primary="全て" />
+          </ListItemButton>
           <List disablePadding>
             {categories.category_list.map((category, index) => (
               <ListItemButton key={index} component="li" className="pr-4" onClick={() => onSelectCategory(category.id)}>
