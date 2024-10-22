@@ -1,7 +1,7 @@
 import { Statuses } from "@/apis/status/types";
 import { Box, Card, CardContent, Typography, List, ListItemText, Badge, ListItemButton } from "@mui/material";
 
-export default function StatusList({ statuses, onSelectStatus }: { statuses: Statuses, onSelectStatus: (statusId: number) => void }) {
+export default function StatusList({ statuses, onSelectStatus }: { statuses: Statuses, onSelectStatus: (statusId: number | null) => void }) {
   return (
     <Box className="w-[180px] mt-4">
       <Card>

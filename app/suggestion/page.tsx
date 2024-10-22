@@ -75,7 +75,7 @@ export default function SuggestionPage() {
   };
 
   // 選択された ステータスID をセット
-  const handleStatusSelect = (statusId: number) => {
+  const handleStatusSelect = (statusId: number | null) => {
     setSelectedStatusId(statusId);
   };
 
