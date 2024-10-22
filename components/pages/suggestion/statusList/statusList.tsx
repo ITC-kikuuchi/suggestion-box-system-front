@@ -9,6 +9,9 @@ export default function StatusList({ statuses, onSelectStatus }: { statuses: Sta
           <Typography variant="h6" component="div" gutterBottom>
             ステータス
           </Typography>
+          <ListItemButton onClick={() => onSelectStatus(null)}>
+            <ListItemText primary="全て" />
+          </ListItemButton>
           <List disablePadding>
             {statuses.status_list.map((status, index) => (
               <ListItemButton key={index} component="li" className="pr-4" onClick={() => onSelectStatus(status.id)}>
