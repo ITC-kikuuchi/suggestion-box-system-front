@@ -70,12 +70,12 @@ export default function SuggestionPage() {
   }, []);
 
   // 選択された カテゴリID をセット
-  const handleCategorySelect = (categoryId: number) => {
+  const handleCategorySelect = (categoryId: number | null) => {
     setSelectedCategoryId(categoryId);
   };
 
   // 選択された ステータスID をセット
-  const handleStatusSelect = (statusId: number) => {
+  const handleStatusSelect = (statusId: number | null) => {
     setSelectedStatusId(statusId);
   };
 
