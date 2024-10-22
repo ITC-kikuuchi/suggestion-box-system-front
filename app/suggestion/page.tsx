@@ -70,7 +70,7 @@ export default function SuggestionPage() {
   }, []);
 
   // 選択された カテゴリID をセット
-  const handleCategorySelect = (categoryId: number) => {
+  const handleCategorySelect = (categoryId: number | null) => {
     setSelectedCategoryId(categoryId);
   };
 

@@ -1,7 +1,7 @@
 import { Categories } from "@/apis/category/types";
 import { Box, Card, CardContent, Typography, List, ListItemText, Badge, ListItemButton } from "@mui/material";
 
-export default function CategoryList({ categories, onSelectCategory }: { categories: Categories, onSelectCategory: (categoryId: number) => void }) {
+export default function CategoryList({ categories, onSelectCategory }: { categories: Categories, onSelectCategory: (categoryId: number | null) => void }) {
   return (
     <Box className="w-[180px]">
       <Card>
