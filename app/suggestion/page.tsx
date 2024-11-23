@@ -111,7 +111,7 @@ export default function SuggestionPage() {
       </div>
 
       {/* 絞り込み機能 */}
-      <div className="absolute right-16 mt-16">
+      <div className="absolute right-16 2xl:right-44 mt-16">
         {/* カテゴリ絞り込み */}
         {categories ? (
           <CategoryList
