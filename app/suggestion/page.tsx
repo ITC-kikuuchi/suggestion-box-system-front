@@ -11,6 +11,7 @@ import { getStatuses } from "@/apis/status/api/getStatuses";
 import SuggestionList from "@/components/pages/suggestion/suggestionList/suggestionList";
 import CategoryList from "@/components/pages/suggestion/categoryList/categoryList";
 import StatusList from "@/components/pages/suggestion/statusList/statusList";
+import { useRouter } from "next/navigation";
 
 export default function SuggestionPage() {
   const [suggestions, setSuggestions] = useState<Suggestions | null>(null);
@@ -20,6 +21,12 @@ export default function SuggestionPage() {
     null
   );
   const [selectedStatusId, setSelectedStatusId] = useState<number | null>(null);
+  
+  const router = useRouter();
+
+  const createButtonClick = () => {
+    router.push('/suggestion/create');
+  };
 
   useEffect(() => {
     const fetchAllData = async () => {
@@ -96,7 +103,7 @@ export default function SuggestionPage() {
     <div className="flex justify-center mt-12 w-full relative">
       <div className="flex-item flex-col max-w-[800px] w-full">
         <div className="self-start">
-          <Button variant="contained" className="w-42 mb-8 bg-neutral-500">
+          <Button variant="contained" className="w-42 mb-8 bg-neutral-500" onClick={createButtonClick}>
             意見を投稿
           </Button>
         </div>
