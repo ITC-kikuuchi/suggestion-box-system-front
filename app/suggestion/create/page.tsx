@@ -40,7 +40,6 @@ export default function createSuggestionPage() {
         >
           詳細
         </Typography>
-        <ReactSimpleMdeEditor style={{ width: "700px", marginTop: "6px" }} options={{ theme: "default" }} />
 
         <Typography
           variant="h5"
