@@ -50,7 +50,7 @@ export default function createSuggestionPage() {
 
         <Typography
           variant="h5"
-          className="mt-2"
+          className="mt-6"
           sx={{ fontWeight: "bold", width: "700px" }}
         >
           カテゴリ
