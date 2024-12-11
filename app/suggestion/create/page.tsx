@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Checkbox, FormControlLabel, FormGroup, TextField, Typography } from "@mui/material";
+import { Button, Checkbox, FormControlLabel, FormGroup, TextareaAutosize, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import "easymde/dist/easymde.min.css";
@@ -40,6 +40,13 @@ export default function createSuggestionPage() {
         >
           詳細
         </Typography>
+        <TextareaAutosize minRows={15} style={{
+          fontFamily: "'IBM Plex Sans', sans-serif",
+          padding: "12px",
+          width: "700px",
+          border: "1px solid #C4C4C4",
+          borderRadius: "4px",
+        }} placeholder="意見を入力してください" />
 
         <Typography
           variant="h5"
