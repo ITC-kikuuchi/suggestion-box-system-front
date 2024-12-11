@@ -40,7 +40,7 @@ export default function createSuggestionPage() {
         >
           詳細
         </Typography>
-        <TextareaAutosize minRows={15} style={{
+        <TextareaAutosize minRows={15} className="mt-3" style={{
           fontFamily: "'IBM Plex Sans', sans-serif",
           padding: "12px",
           width: "700px",
