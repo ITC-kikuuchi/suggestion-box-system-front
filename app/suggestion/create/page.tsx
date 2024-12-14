@@ -3,10 +3,6 @@
 import { Button, Checkbox, FormControlLabel, FormGroup, TextareaAutosize, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-const ReactSimpleMdeEditor = dynamic(() => import("react-simplemde-editor"), {
-  ssr: false,
-});
-
 export default function createSuggestionPage() {
 
   const router = useRouter();
