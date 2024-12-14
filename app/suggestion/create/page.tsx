@@ -2,8 +2,6 @@
 
 import { Button, Checkbox, FormControlLabel, FormGroup, TextareaAutosize, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
-import "easymde/dist/easymde.min.css";
 
 const ReactSimpleMdeEditor = dynamic(() => import("react-simplemde-editor"), {
   ssr: false,
